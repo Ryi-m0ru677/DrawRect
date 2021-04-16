@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "TipViewController.h"
+#import "CustomView.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) IBOutlet CustomView *customView;
+@property (nonatomic, strong) IBOutlet UISlider *slider;
 @end
 
 @implementation ViewController
@@ -18,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.customView.radius = self.slider.value;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,5 +31,11 @@
 - (IBAction)modalButtonClicked:(id)sender
 {
 //    [self presentViewController: animated:<#(BOOL)#> completion:<#^(void)completion#>]
+}
+
+- (IBAction)sliderCircle:(UISlider *)sender
+{
+    self.customView.radius = sender.value;
+    [self.customView setNeedsDisplay];
 }
 @end

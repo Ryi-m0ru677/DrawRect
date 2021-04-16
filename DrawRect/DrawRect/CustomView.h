@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CustomView : UIView
-
+@property (nonatomic, assign) NSInteger radius;
 @end

@@ -30,10 +30,20 @@
                                 <rect key="frame" x="60" y="145" width="200" height="283"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Ga6-ix-pZe">
+                                <rect key="frame" x="101" y="468" width="118" height="31"/>
+                                <connections>
+                                    <action selector="sliderCircle:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Pjr-2G-eXL"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.60392156860000001" green="0.63921568630000003" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="customView" destination="nD5-E6-2oT" id="eZk-4U-xtG"/>
+                        <outlet property="slider" destination="Ga6-ix-pZe" id="zwq-yv-Glp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

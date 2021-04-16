@@ -31,7 +31,8 @@
 //    [self drawSector:rect contextRef:cr];
     
     // 绘制小黄人
-    [self drawYellowPeople:rect contextRef:cr];
+//    [self drawYellowPeople:rect contextRef:cr];
+    [self sliderCircle:rect contextRef:cr radius:self.radius];
 }
 
 // 贝塞尔曲线
@@ -185,5 +186,13 @@
 }
 
 // 滑动按钮让园变大
+- (void)sliderCircle:(CGRect)rect contextRef:(CGContextRef)contextRef radius:(NSInteger)radius
+{
+//    CGContextAddEllipseInRect(contextRef, CGRectMake(60, 60, radius, radius));
+//    CGContextSetLineWidth(contextRef, 3);
+    CGContextAddArc(contextRef, 0.5 * rect.size.width , 0.5 * rect.size.height, radius, 0, 2 * M_PI, 0);
+    [[UIColor blueColor] set];
+    CGContextFillPath(contextRef);
+}
 
 @end
