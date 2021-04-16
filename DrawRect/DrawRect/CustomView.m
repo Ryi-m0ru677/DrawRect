@@ -22,7 +22,7 @@
 //    [self drawBezier:rect contextRef:cr];
 //    CGContextRestoreGState(cr);
 //    [self drawTriangle:rect contextRef:cr];
-    [self drawRectangle:rect contextRef:cr];
+//    [self drawRectangle:rect contextRef:cr];
     
     // 把图片切成圆形
 //    [self clipIcon:@"80"contextRef:cr];
@@ -30,7 +30,8 @@
     // 绘制扇形
 //    [self drawSector:rect contextRef:cr];
     
-    
+    // 绘制小黄人
+    [self drawYellowPeople:rect contextRef:cr];
 }
 
 // 贝塞尔曲线
@@ -116,6 +117,73 @@
 // 小黄人制作
 - (void)drawYellowPeople:(CGRect)rect contextRef:(CGContextRef)contextRef
 {
+    // 先绘制的放在图层的最下面，绘制身体
+    CGContextSaveGState(contextRef);
+    CGFloat TopX = rect.size.width*0.5;
+    CGFloat TopY = 100;
+    CGFloat Radius = 50;
+    CGContextAddArc(contextRef, TopX, TopY, Radius, -M_PI, 0, 0);
+    CGContextAddLineToPoint(contextRef, TopX + Radius, TopY + 75);
+    CGContextAddArc(contextRef, TopX, TopY + 90, Radius, 0, M_PI, 0);
+    CGContextClosePath(contextRef);
+    [[UIColor yellowColor] set];
+    CGContextFillPath(contextRef);
+    
+    // 绘制眼镜框
+    CGContextRestoreGState(contextRef);
+    CGContextSaveGState(contextRef);
+    CGContextMoveToPoint(contextRef, TopX - Radius, TopY - 4);
+    CGContextAddLineToPoint(contextRef, TopX + Radius, TopY - 4);
+    CGContextSetLineWidth(contextRef, 8);
+    [[UIColor blackColor] set];
+    CGContextStrokePath(contextRef);
+    
+    CGContextRestoreGState(contextRef);
+    CGContextSaveGState(contextRef);
+    CGContextAddArc(contextRef, TopX - 20, TopY - 4, 20, 0, 2 * M_PI, 0);
+    CGContextAddArc(contextRef, TopX + 20, TopY - 4, 20, 0, 2 * M_PI, 0);
+    CGContextFillPath(contextRef);
+    
+    CGContextRestoreGState(contextRef);
+    CGContextSaveGState(contextRef);
+    CGContextAddArc(contextRef, TopX - 20, TopY - 4, 16, 0, 2 * M_PI, 0);
+    CGContextAddArc(contextRef, TopX + 20, TopY - 4, 16, 0, 2 * M_PI, 0);
+    [[UIColor whiteColor] set];
+    CGContextFillPath(contextRef);
+    
+    CGContextRestoreGState(contextRef);
+    CGContextSaveGState(contextRef);
+    CGContextAddArc(contextRef, TopX - 18, TopY - 4, 12, 0, 2 * M_PI, 0);
+    CGContextAddArc(contextRef, TopX + 18, TopY - 4, 12, 0, 2 * M_PI, 0);
+    [[UIColor blackColor] set];
+    CGContextFillPath(contextRef);
+    
+    // 绘制头发
+    CGContextRestoreGState(contextRef);
+    CGContextSaveGState(contextRef);
+    CGContextMoveToPoint(contextRef, TopX - 33, TopY - Radius - 10);
+    CGContextAddLineToPoint(contextRef, TopX - 25, TopY - Radius + 10);
+    CGContextStrokePath(contextRef);
+    
+    CGContextRestoreGState(contextRef);
+    CGContextSaveGState(contextRef);
+    CGContextMoveToPoint(contextRef, TopX - 10, TopY - Radius - 17);
+    CGContextAddLineToPoint(contextRef, TopX, TopY - Radius + 3);
+    CGContextStrokePath(contextRef);
+    
+    CGContextRestoreGState(contextRef);
+    CGContextSaveGState(contextRef);
+    CGContextMoveToPoint(contextRef, TopX + 25, TopY - Radius - 17);
+    CGContextAddLineToPoint(contextRef, TopX + 10, TopY - Radius + 3);
+    CGContextStrokePath(contextRef);
+    
+    CGContextRestoreGState(contextRef);
+    CGContextMoveToPoint(contextRef, TopX - 15, TopY + 40);
+    CGContextAddQuadCurveToPoint(contextRef, TopX, TopY + 60, TopX + 15, TopY + 40);
+    CGContextStrokePath(contextRef);
     
 }
+
+// 滑动按钮让园变大
+
 @end
