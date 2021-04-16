@@ -15,6 +15,7 @@
 		18AD507C1ADF8C6200DC28EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AD507A1ADF8C6200DC28EC /* LaunchScreen.xib */; };
 		18AD50881ADF8C6200DC28EC /* DrawRectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AD50871ADF8C6200DC28EC /* DrawRectTests.m */; };
 		18AD50931ADF8E8800DC28EC /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AD50921ADF8E8800DC28EC /* TipViewController.m */; };
+		18AD50961ADFA20100DC28EC /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AD50951ADFA20100DC28EC /* CustomView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		18AD50871ADF8C6200DC28EC /* DrawRectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawRectTests.m; sourceTree = "<group>"; };
 		18AD50911ADF8E8800DC28EC /* TipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipViewController.h; sourceTree = "<group>"; };
 		18AD50921ADF8E8800DC28EC /* TipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipViewController.m; sourceTree = "<group>"; };
+		18AD50941ADFA20100DC28EC /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		18AD50951ADFA20100DC28EC /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				18AD50731ADF8C6200DC28EC /* ViewController.m */,
 				18AD50911ADF8E8800DC28EC /* TipViewController.h */,
 				18AD50921ADF8E8800DC28EC /* TipViewController.m */,
+				18AD50941ADFA20100DC28EC /* CustomView.h */,
+				18AD50951ADFA20100DC28EC /* CustomView.m */,
 				18AD50751ADF8C6200DC28EC /* Main.storyboard */,
 				18AD50781ADF8C6200DC28EC /* Images.xcassets */,
 				18AD507A1ADF8C6200DC28EC /* LaunchScreen.xib */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18AD50961ADFA20100DC28EC /* CustomView.m in Sources */,
 				18AD50741ADF8C6200DC28EC /* ViewController.m in Sources */,
 				18AD50711ADF8C6200DC28EC /* AppDelegate.m in Sources */,
 				18AD50931ADF8E8800DC28EC /* TipViewController.m in Sources */,
